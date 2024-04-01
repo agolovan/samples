@@ -4,7 +4,7 @@ import { processPeople } from '../samples/strings/processPeople';
 describe('code sample tests', () => {
   afterEach(cleanup);
   
-  it('should all people and level for the person', () => {
+  it('should all get all people and level for each person', () => {
     const people = processPeople();
     expect(people).toEqual(
       [

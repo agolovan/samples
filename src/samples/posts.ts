@@ -84,7 +84,7 @@ const processResursive = (postId: number) => {
         totalComments = totalComments + currentPost.comments.length;
     }
     linkedPosts.push(postId);
-    currentPost.linkedPosts.forEach(id => {
+    currentPost.linkedPosts?.forEach(id => {
         if (!linkedPosts.includes(id)) {
             processResursive(id);
         }    

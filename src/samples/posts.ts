@@ -78,7 +78,7 @@ interface IPost {
 let totalComments: number;
 let linkedPosts: number[];
 
-const processResursive = (postId: number) => {
+const processPost = (postId: number) => {
     const currentPost = inputPosts.find ( post => post.id === postId);
     if (!linkedPosts.includes(postId)) {
         totalComments = totalComments + currentPost.comments.length;
@@ -86,7 +86,7 @@ const processResursive = (postId: number) => {
     linkedPosts.push(postId);
     currentPost.linkedPosts?.forEach(id => {
         if (!linkedPosts.includes(id)) {
-            processResursive(id);
+            processPost(id);
         }    
     })
 }
@@ -98,6 +98,6 @@ export const processPosts = (inputPostId: number) => {
     }
     linkedPosts = [];
     totalComments = 0;
-    processResursive(inputPostId);
+    processPost(inputPostId);
     return(totalComments);
 }

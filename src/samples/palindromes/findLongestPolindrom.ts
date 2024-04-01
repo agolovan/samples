@@ -1,3 +1,8 @@
+interface IPolindrome {
+  value: string;
+  length: number;
+}
+
 // Given a string, find all non-single letter substrings that are palindromes.
 const isPalindrome = (s: string) => {
   let start = 0;
@@ -27,16 +32,18 @@ const getAllSubstrings = (s: string): string[] => {
   return substrings;
 }
 
-
 export const findLongestPolindrom = (input: string) => {
-  const palindromes = []; 
-  const palindromelengths = []; 
+  const palindromes: Array<IPolindrome> = []; 
   
   const substrings = getAllSubstrings(input);
   substrings.forEach ( substring => {
     if (substring.length > 1 && isPalindrome(substring)) {
-      palindromes.push(substring);
-      palindromelengths.push(substring.length);
+      palindromes.push( 
+        { 
+          value: substring, 
+          length: substring.length 
+        } 
+      );
     }
   }) 
 
@@ -44,7 +51,6 @@ export const findLongestPolindrom = (input: string) => {
     return 1;
   }
 
-  const maxLengh = Math.max(...palindromelengths);
-  const maxIndex = palindromelengths.indexOf(maxLengh);
-  return palindromes[maxIndex]; 
+  const maxLengh = Math.max(...palindromes.map(palindrome => palindrome.length));
+  return palindromes.find( sa => sa.length === maxLengh)?.value;
 }

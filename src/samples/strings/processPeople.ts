@@ -1,5 +1,4 @@
-// CODE
-// Display all people starting with alex and display level from the top
+// Display all people starting with top and display level from the top
 interface IPerson {
   name: string;
   subordinates?: string[];

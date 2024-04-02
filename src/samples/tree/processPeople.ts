@@ -1,41 +1,43 @@
-// Display all people starting with top and display level from the top
+// Display all people starting with top and level from the top for each person
 interface IPerson {
   name: string;
   subordinates?: string[];
   level?: number;
 }
 
+const topName = 'alex';
+
 const people: Array<IPerson> = [
   {
-    name: 'alex',
+    name: 'alex',  // level 1
     subordinates: ['mila', 'ira'],
   }
   ,
   {
-    name: 'mila',
+    name: 'mila', // level 2
     subordinates: ['mitchel'],
   }
   ,
   {
-    name: 'ira',
+    name: 'ira', // level 2
     subordinates: ['eugene'],
   }
   ,
   {
-    name: 'mitchel',
+    name: 'mitchel', // level 3
   }
   ,
   {
-    name: 'eugene',
+    name: 'eugene',  // level 3
     subordinates: ['jacob', 'jesse'],
   }
   ,
   {
-    name: 'jacob',
+    name: 'jacob', // level 4
   }
   ,
   {
-    name: 'jesse',
+    name: 'jesse', // level 4
   }
 ]  
   
@@ -56,6 +58,6 @@ const traversePeople = (name: string, level: number) => {
 }
 
 export const processPeople = () => {
-  traversePeople('alex', 1);
+  traversePeople(topName, 1);
   return peopleArray;
 }

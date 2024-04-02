@@ -1,5 +1,5 @@
 import { cleanup } from '@testing-library/react';
-import { processPeople } from '../samples/strings/processPeople';
+import { processPeople } from '../samples/tree/processPeople';
 
 describe('code sample tests', () => {
   afterEach(cleanup);

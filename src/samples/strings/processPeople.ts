@@ -2,7 +2,6 @@
 // Display all people starting with alex and display level from the top
 interface IPerson {
   name: string;
-  boss?: string;
   subordinates?: string[];
   level?: number;
 }
@@ -15,35 +14,29 @@ const people: Array<IPerson> = [
   ,
   {
     name: 'mila',
-    boss: 'alex',
     subordinates: ['mitchel'],
   }
   ,
   {
     name: 'ira',
-    boss: 'alex',
     subordinates: ['eugene'],
   }
   ,
   {
     name: 'mitchel',
-    boss: 'mila',
   }
   ,
   {
     name: 'eugene',
-    boss: 'ira',
     subordinates: ['jacob', 'jesse'],
   }
   ,
   {
     name: 'jacob',
-    boss: 'eugene',
   }
   ,
   {
     name: 'jesse',
-    boss: 'eugene',
   }
 ]  
   

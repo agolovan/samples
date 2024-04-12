@@ -6,42 +6,41 @@ import { IData } from "../../types";
 
 
 const displayElement = (data: IData) => {
-      Object.entries(data).forEach(([key, value]) => {
-         console.log(key);
-         console.log(value);
-      });
+   Object.entries(data).forEach(([key, value]) => {
+      console.log(key);
+      if (Object.keys(value).length !== 0) {
+         displayElement(value as IData);
+      }
+   });
 }
-
 
 const NavigationWidget = (data: IData) => {
    displayElement(data);
-    return  (
-    <ul>
-       <li>
-          products
-          <ul>
-             <li>
-                analytics
-                <ul>
-                   <li>amazon cloud search</li>
-                </ul>
-             </li>
-             <li>blockchain</li>
-          </ul>
-       </li>
-       <li>
-          solutions
-          <ul>
-             <li>by use case</li>
-             <li>by industry</li>
-          </ul>
-       </li>
-       <li>pricing</li>
-       <li>documentation</li>
-    </ul>
-    )
+   return (
+      <ul>
+         <li>
+            products
+            <ul>
+               <li>
+                  analytics
+                  <ul>
+                     <li>amazon cloud search</li>
+                  </ul>
+               </li>
+               <li>blockchain</li>
+            </ul>
+         </li>
+         <li>
+            solutions
+            <ul>
+               <li>by use case</li>
+               <li>by industry</li>
+            </ul>
+         </li>
+         <li>pricing</li>
+         <li>documentation</li>
+      </ul>
+   )
 }
 
 export default NavigationWidget;
-
-

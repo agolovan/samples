@@ -1,5 +1,5 @@
-//import { findFirstNotRepeatedCharacter } from './samples/codeSamples';
-import { processPosts } from './samples/posts'
+import React from 'react';
+import NavigationWidget from './samples/ui/Navigation';
 
 import logo from './logo.svg';
 import './App.css';
@@ -20,9 +20,9 @@ function App() {
         >
           Learn React
         </a>
-        <p>
-         {processPosts(5)}
-         </p>
+        <div>
+         <NavigationWidget />
+         </div>
       </header>
     </div>
   );

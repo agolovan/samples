@@ -5,10 +5,8 @@ import React from 'react';
 import { IData } from "../../types";
 
 const renderNavItems = (items) => {
-   return Object.keys(items).map((key) => {
-      const subItems = items[key];
+   return Object.entries(items).map(([key, subItems]) => {
       const hasSubItems = Object.keys(subItems).length > 0;
-
       return (
          <li key={key}>
             <span>{key}</span>

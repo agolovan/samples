@@ -1,5 +1,6 @@
 import React from 'react';
 import NavigationWidget from './samples/ui/Navigation';
+import {data} from './constants' 
 
 import logo from './logo.svg';
 import './App.css';
@@ -21,7 +22,7 @@ function App() {
           Learn React
         </a>
         <div>
-         <NavigationWidget />
+         <NavigationWidget data={data} />
          </div>
       </header>
     </div>

@@ -4,8 +4,17 @@ import React from 'react';
 
 import { IData } from "../../types";
 
+
+const displayElement = (data: IData) => {
+      Object.entries(data).forEach(([key, value]) => {
+         console.log(key);
+         console.log(value);
+      });
+}
+
+
 const NavigationWidget = (data: IData) => {
-    console.log(data);
+   displayElement(data);
     return  (
     <ul>
        <li>

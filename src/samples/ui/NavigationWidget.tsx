@@ -1,6 +1,7 @@
 //Create a "Navigation Widget" using JSON data, 
 //create the corresponding markup to render the navigation in a page.
 import React from 'react';
+import { IData } from '../../types';
 
 export const renderNavItems = (items) => {
    return Object.entries(items).map(([key, subItems]) => {

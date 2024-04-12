@@ -1,6 +1,6 @@
 import { IData } from './types'; 
 
-export const data: IData = {
+export const navigationData: IData = {
     "products": {
       "analytics": {
         "amazon athena": {
